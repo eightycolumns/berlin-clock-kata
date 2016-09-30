@@ -18,4 +18,8 @@ class BerlinClock {
 
     return row;
   }
+
+  public static String oneHourRow(int hour) {
+    return "0000";
+  }
 }
