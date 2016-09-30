@@ -1,0 +1,9 @@
+BERLIN CLOCK KATA
+
+The Berlin Clock uses twenty-four lights to tell time. A blinking lamp on top
+represents seconds (off for odd, on for even). The first row has four lights
+representing five hours each. The second row has four lights representing one
+hour each. The third row has eleven lights representing five minutes each. The
+fourth row has four lights representing one minute each. The objective of this
+kata is to convert digital times to binary strings representing the clock's
+lights (0 for off, 1 for on).
