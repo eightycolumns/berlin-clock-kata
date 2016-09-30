@@ -20,6 +20,16 @@ class BerlinClock {
   }
 
   public static String oneHourRow(int hour) {
-    return "0000";
+    String row = "";
+
+    if (hour > 0) {
+      row += "1";
+    }
+
+    while (row.length() < 4) {
+      row += "0";
+    }
+
+    return row;
   }
 }
