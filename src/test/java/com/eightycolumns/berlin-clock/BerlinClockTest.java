@@ -9,4 +9,9 @@ public class BerlinClockTest {
   public void secondsLampIs1AtSecond0() {
     assertEquals("1", BerlinClock.secondsLamp(0));
   }
+
+  @Test
+  public void secondsLampIs0AtSecond59() {
+    assertEquals("0", BerlinClock.secondsLamp(59));
+  }
 }
