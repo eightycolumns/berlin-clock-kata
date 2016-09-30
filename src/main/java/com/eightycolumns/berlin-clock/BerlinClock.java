@@ -6,6 +6,16 @@ class BerlinClock {
   }
 
   public static String fiveHourRow(int hour) {
-    return "0000";
+    String row = "";
+
+    if (hour / 5 > 0) {
+      row += "1";
+    }
+
+    while (row.length() < 4) {
+      row += "0";
+    }
+
+    return row;
   }
 }
