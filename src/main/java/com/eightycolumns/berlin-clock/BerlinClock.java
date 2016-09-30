@@ -8,32 +8,33 @@ class BerlinClock {
   public static String fiveHourRow(int hour) {
     int n_lights = 4;
     int n_lights_on = hour / 5;
-    int n_lights_off = n_lights - n_lights_on;
 
-    return repeat('1', n_lights_on) + repeat('0', n_lights_off);
+    return row(n_lights, n_lights_on);
   }
 
   public static String oneHourRow(int hour) {
     int n_lights = 4;
     int n_lights_on = hour % 5;
-    int n_lights_off = n_lights - n_lights_on;
 
-    return repeat('1', n_lights_on) + repeat('0', n_lights_off);
+    return row(n_lights, n_lights_on);
   }
 
   public static String fiveMinuteRow(int minute) {
     int n_lights = 11;
     int n_lights_on = minute / 5;
-    int n_lights_off = n_lights - n_lights_on;
 
-    return repeat('1', n_lights_on) + repeat('0', n_lights_off);
+    return row(n_lights, n_lights_on);
   }
 
   public static String oneMinuteRow(int minute) {
     int n_lights = 4;
     int n_lights_on = minute % 5;
-    int n_lights_off = n_lights - n_lights_on;
 
+    return row(n_lights, n_lights_on);
+  }
+
+  private static String row(int n_lights, int n_lights_on) {
+    int n_lights_off = n_lights - n_lights_on;
     return repeat('1', n_lights_on) + repeat('0', n_lights_off);
   }
 
