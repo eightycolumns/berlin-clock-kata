@@ -6,58 +6,28 @@ class BerlinClock {
   }
 
   public static String fiveHourRow(int hour) {
-    String row = "";
-
-    for (int i = 0; i < hour / 5; i += 1) {
-      row += "1";
-    }
-
-    while (row.length() < 4) {
-      row += "0";
-    }
-
-    return row;
+    return repeat('1', hour / 5) + repeat('0', 4 - hour / 5);
   }
 
   public static String oneHourRow(int hour) {
-    String row = "";
-
-    for (int i = 0; i < hour % 5; i += 1) {
-      row += "1";
-    }
-
-    while (row.length() < 4) {
-      row += "0";
-    }
-
-    return row;
+    return repeat('1', hour % 5) + repeat('0', 4 - hour % 5);
   }
 
   public static String fiveMinuteRow(int minute) {
-    String row = "";
-
-    for (int i = 0; i < minute / 5; i += 1) {
-      row += "1";
-    }
-
-    while (row.length() < 11) {
-      row += "0";
-    }
-
-    return row;
+    return repeat('1', minute / 5) + repeat('0', 11 - minute / 5);
   }
 
   public static String oneMinuteRow(int minute) {
-    String row = "";
+    return repeat('1', minute % 5) + repeat('0', 4 - minute % 5);
+  }
 
-    for (int i = 0; i < minute % 5; i += 1) {
-      row += "1";
+  private static String repeat(char c, int n) {
+    String s = "";
+
+    for (int i = 0; i < n; i += 1) {
+      s += c;
     }
 
-    while (row.length() < 4) {
-      row += "0";
-    }
-
-    return row;
+    return s;
   }
 }
