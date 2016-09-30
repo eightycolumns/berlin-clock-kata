@@ -134,4 +134,12 @@ public class BerlinClockTest {
   public void oneMinuteRowIs1111AtMinute59() {
     assertEquals("1111", BerlinClock.oneMinuteRow(59));
   }
+
+  @Test
+  public void compositeRowIs100000000000000000000000AtHour0Minute0Second0() {
+    assertEquals(
+      "100000000000000000000000",
+      BerlinClock.compositeRow(0, 0, 0)
+    );
+  }
 }

@@ -33,6 +33,16 @@ class BerlinClock {
     return row(n_lights, n_lights_on);
   }
 
+  public static String compositeRow(int hour, int minute, int second) {
+    return (
+      secondsLamp(second) +
+      fiveHourRow(hour) +
+      oneHourRow(hour) +
+      fiveMinuteRow(minute) +
+      oneMinuteRow(minute)
+    );
+  }
+
   private static String row(int n_lights, int n_lights_on) {
     int n_lights_off = n_lights - n_lights_on;
     return repeat('1', n_lights_on) + repeat('0', n_lights_off);
