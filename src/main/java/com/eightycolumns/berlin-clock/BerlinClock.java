@@ -34,6 +34,16 @@ class BerlinClock {
   }
 
   public static String fiveMinuteRow(int minute) {
-    return "00000000000";
+    String row = "";
+
+    if (minute / 5 > 0) {
+      row += "1";
+    }
+
+    while (row.length() < 11) {
+      row += "0";
+    }
+
+    return row;
   }
 }
