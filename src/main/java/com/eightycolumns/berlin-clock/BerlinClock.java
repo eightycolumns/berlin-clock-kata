@@ -32,4 +32,8 @@ class BerlinClock {
 
     return row;
   }
+
+  public static String fiveMinuteRow(int minute) {
+    return "00000000000";
+  }
 }
