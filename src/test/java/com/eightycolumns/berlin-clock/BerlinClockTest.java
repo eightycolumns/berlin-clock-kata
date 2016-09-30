@@ -104,4 +104,9 @@ public class BerlinClockTest {
   public void fiveMinuteRowIs11111111111AtMinute59() {
     assertEquals("11111111111", BerlinClock.fiveMinuteRow(59));
   }
+
+  @Test
+  public void oneMinuteRowIs0000AtMinute0() {
+    assertEquals("0000", BerlinClock.oneMinuteRow(0));
+  }
 }

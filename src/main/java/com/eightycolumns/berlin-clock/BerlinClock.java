@@ -46,4 +46,8 @@ class BerlinClock {
 
     return row;
   }
+
+  public static String oneMinuteRow(int minute) {
+    return "0000";
+  }
 }
