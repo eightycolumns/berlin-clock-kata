@@ -54,4 +54,9 @@ public class BerlinClockTest {
   public void oneHourRowIs1000AtHour1() {
     assertEquals("1000", BerlinClock.oneHourRow(1));
   }
+
+  @Test
+  public void oneHourRowIs1100AtHour4() {
+    assertEquals("1111", BerlinClock.oneHourRow(4));
+  }
 }

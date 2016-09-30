@@ -22,7 +22,7 @@ class BerlinClock {
   public static String oneHourRow(int hour) {
     String row = "";
 
-    if (hour > 0) {
+    for (int i = 0; i < hour; i += 1) {
       row += "1";
     }
 
