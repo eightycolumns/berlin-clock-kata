@@ -8,7 +8,7 @@ class BerlinClock {
   public static String fiveHourRow(int hour) {
     String row = "";
 
-    if (hour / 5 > 0) {
+    for (int i = 0; i < hour / 5; i += 1) {
       row += "1";
     }
 
