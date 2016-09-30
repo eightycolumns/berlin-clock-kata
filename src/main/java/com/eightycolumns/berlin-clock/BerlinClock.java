@@ -6,19 +6,23 @@ class BerlinClock {
   }
 
   public static String fiveHourRow(int hour) {
-    return repeat('1', hour / 5) + repeat('0', 4 - hour / 5);
+    int n_lights = 4;
+    return repeat('1', hour / 5) + repeat('0', n_lights - hour / 5);
   }
 
   public static String oneHourRow(int hour) {
-    return repeat('1', hour % 5) + repeat('0', 4 - hour % 5);
+    int n_lights = 4;
+    return repeat('1', hour % 5) + repeat('0', n_lights - hour % 5);
   }
 
   public static String fiveMinuteRow(int minute) {
-    return repeat('1', minute / 5) + repeat('0', 11 - minute / 5);
+    int n_lights = 11;
+    return repeat('1', minute / 5) + repeat('0', n_lights - minute / 5);
   }
 
   public static String oneMinuteRow(int minute) {
-    return repeat('1', minute % 5) + repeat('0', 4 - minute % 5);
+    int n_lights = 4;
+    return repeat('1', minute % 5) + repeat('0', n_lights - minute % 5);
   }
 
   private static String repeat(char c, int n) {
