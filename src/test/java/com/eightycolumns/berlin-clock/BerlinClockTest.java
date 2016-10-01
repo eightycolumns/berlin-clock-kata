@@ -26,6 +26,13 @@ public class BerlinClockTest {
   }
 
   @Test
+  public void fiveHourRowExpectsNonnegativeHour() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Invalid hour");
+    BerlinClock.fiveHourRow(-1);
+  }
+
+  @Test
   public void secondsLampIs1AtSecond0() {
     assertEquals("1", BerlinClock.secondsLamp(0));
   }
