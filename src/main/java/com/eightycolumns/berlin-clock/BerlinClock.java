@@ -36,7 +36,7 @@ class BerlinClock {
   }
 
   public static String fiveMinuteRow(int minute) {
-    if (minute < 0) {
+    if (minute < 0 || minute > 59) {
       throw new IllegalArgumentException("Invalid minute");
     }
 
