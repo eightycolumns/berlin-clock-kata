@@ -36,6 +36,10 @@ class BerlinClock {
   }
 
   public static String fiveMinuteRow(int minute) {
+    if (minute < 0) {
+      throw new IllegalArgumentException("Invalid minute");
+    }
+
     int n_lights = 11;
     int n_lights_on = minute / 5;
 
