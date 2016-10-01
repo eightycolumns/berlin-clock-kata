@@ -247,6 +247,13 @@ public class BerlinClockTest {
   }
 
   @Test
+  public void compositeRowExpectsSecondLessThan60() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Invalid second");
+    BerlinClock.compositeRow(0, 0, 60);
+  }
+
+  @Test
   public void compositeRowIs100000000000000000000000AtHour0Minute0Second0() {
     assertEquals(
       "100000000000000000000000",
