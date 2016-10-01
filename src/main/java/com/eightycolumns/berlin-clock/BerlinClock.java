@@ -10,7 +10,7 @@ class BerlinClock {
       throw new IllegalArgumentException("Invalid second");
     }
 
-    return (second % 2 == 0) ? "1" : "0";
+    return isEven(second) ? "1" : "0";
   }
 
   public static String fiveHourRow(int hour) {
@@ -65,6 +65,10 @@ class BerlinClock {
       fiveMinuteRow(minute) +
       oneMinuteRow(minute)
     );
+  }
+
+  private static boolean isEven(int d) {
+    return d % 2 == 0;
   }
 
   private static String row(int n_lights, int n_lights_on) {
