@@ -47,6 +47,13 @@ public class BerlinClockTest {
   }
 
   @Test
+  public void oneHourRowExpectsHourLessThan24() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Invalid hour");
+    BerlinClock.oneHourRow(24);
+  }
+
+  @Test
   public void secondsLampIs1AtSecond0() {
     assertEquals("1", BerlinClock.secondsLamp(0));
   }

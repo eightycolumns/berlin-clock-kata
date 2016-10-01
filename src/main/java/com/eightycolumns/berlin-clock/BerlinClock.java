@@ -25,7 +25,7 @@ class BerlinClock {
   }
 
   public static String oneHourRow(int hour) {
-    if (hour < 0) {
+    if (hour < 0 || hour > 23) {
       throw new IllegalArgumentException("Invalid hour");
     }
 
