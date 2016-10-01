@@ -68,11 +68,16 @@ class BerlinClock {
   }
 
   private static String row(int n_lights, int n_lights_on) {
+    assert n_lights >= n_lights_on;
+
     int n_lights_off = n_lights - n_lights_on;
+
     return repeat('1', n_lights_on) + repeat('0', n_lights_off);
   }
 
   private static String repeat(char c, int n) {
+    assert n >= 0;
+
     String s = "";
 
     for (int i = 0; i < n; i += 1) {
