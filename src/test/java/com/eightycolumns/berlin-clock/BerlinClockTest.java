@@ -11,18 +11,13 @@ public class BerlinClockTest {
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
+  // Seconds lamp
+
   @Test
   public void secondsLampExpectsNonnegativeSecond() {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Invalid second");
     BerlinClock.secondsLamp(-1);
-  }
-
-  @Test
-  public void secondsLampExpectsSecondLessThan60() {
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Invalid second");
-    BerlinClock.secondsLamp(60);
   }
 
   @Test
@@ -36,17 +31,19 @@ public class BerlinClockTest {
   }
 
   @Test
+  public void secondsLampExpectsSecondLessThan60() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Invalid second");
+    BerlinClock.secondsLamp(60);
+  }
+
+  // Five-hour row
+
+  @Test
   public void fiveHourRowExpectsNonnegativeHour() {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Invalid hour");
     BerlinClock.fiveHourRow(-1);
-  }
-
-  @Test
-  public void fiveHourRowExpectsHourLessThan24() {
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Invalid hour");
-    BerlinClock.fiveHourRow(24);
   }
 
   @Test
@@ -80,17 +77,19 @@ public class BerlinClockTest {
   }
 
   @Test
+  public void fiveHourRowExpectsHourLessThan24() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Invalid hour");
+    BerlinClock.fiveHourRow(24);
+  }
+
+  // One-hour row
+
+  @Test
   public void oneHourRowExpectsNonnegativeHour() {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Invalid hour");
     BerlinClock.oneHourRow(-1);
-  }
-
-  @Test
-  public void oneHourRowExpectsHourLessThan24() {
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Invalid hour");
-    BerlinClock.oneHourRow(24);
   }
 
   @Test
@@ -124,17 +123,19 @@ public class BerlinClockTest {
   }
 
   @Test
+  public void oneHourRowExpectsHourLessThan24() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Invalid hour");
+    BerlinClock.oneHourRow(24);
+  }
+
+  // Five-minute row
+
+  @Test
   public void fiveMinuteRowExpectsNonnegativeMinute() {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Invalid minute");
     BerlinClock.fiveMinuteRow(-1);
-  }
-
-  @Test
-  public void fiveMinuteRowExpectsMinuteLessThan60() {
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Invalid minute");
-    BerlinClock.fiveMinuteRow(60);
   }
 
   @Test
@@ -168,17 +169,19 @@ public class BerlinClockTest {
   }
 
   @Test
+  public void fiveMinuteRowExpectsMinuteLessThan60() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Invalid minute");
+    BerlinClock.fiveMinuteRow(60);
+  }
+
+  // One-minute row
+
+  @Test
   public void oneMinuteRowExpectsNonnegativeMinute() {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Invalid minute");
     BerlinClock.oneMinuteRow(-1);
-  }
-
-  @Test
-  public void oneMinuteRowExpectsMinuteLessThan60() {
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Invalid minute");
-    BerlinClock.oneMinuteRow(60);
   }
 
   @Test
@@ -212,17 +215,19 @@ public class BerlinClockTest {
   }
 
   @Test
+  public void oneMinuteRowExpectsMinuteLessThan60() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Invalid minute");
+    BerlinClock.oneMinuteRow(60);
+  }
+
+  // Composite row
+
+  @Test
   public void compositeRowExpectsNonnegativeHour() {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Invalid hour");
     BerlinClock.compositeRow(-1, 0, 0);
-  }
-
-  @Test
-  public void compositeRowExpectsHourLessThan24() {
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Invalid hour");
-    BerlinClock.compositeRow(24, 0, 0);
   }
 
   @Test
@@ -233,24 +238,10 @@ public class BerlinClockTest {
   }
 
   @Test
-  public void compositeRowExpectsMinuteLessThan60() {
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Invalid minute");
-    BerlinClock.compositeRow(0, 60, 0);
-  }
-
-  @Test
   public void compositeRowExpectsNonnegativeSecond() {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Invalid second");
     BerlinClock.compositeRow(0, 0, -1);
-  }
-
-  @Test
-  public void compositeRowExpectsSecondLessThan60() {
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Invalid second");
-    BerlinClock.compositeRow(0, 0, 60);
   }
 
   @Test
@@ -267,5 +258,26 @@ public class BerlinClockTest {
       "011111110111111111111111",
       BerlinClock.compositeRow(23, 59, 59)
     );
+  }
+
+  @Test
+  public void compositeRowExpectsHourLessThan24() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Invalid hour");
+    BerlinClock.compositeRow(24, 0, 0);
+  }
+
+  @Test
+  public void compositeRowExpectsMinuteLessThan60() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Invalid minute");
+    BerlinClock.compositeRow(0, 60, 0);
+  }
+
+  @Test
+  public void compositeRowExpectsSecondLessThan60() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Invalid second");
+    BerlinClock.compositeRow(0, 0, 60);
   }
 }
