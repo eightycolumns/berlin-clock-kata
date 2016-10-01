@@ -68,6 +68,13 @@ public class BerlinClockTest {
   }
 
   @Test
+  public void oneMinuteRowExpectsNonnegativeMinute() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Invalid minute");
+    BerlinClock.oneMinuteRow(-1);
+  }
+
+  @Test
   public void secondsLampIs1AtSecond0() {
     assertEquals("1", BerlinClock.secondsLamp(0));
   }
