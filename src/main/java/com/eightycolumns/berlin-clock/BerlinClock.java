@@ -25,6 +25,10 @@ class BerlinClock {
   }
 
   public static String oneHourRow(int hour) {
+    if (hour < 0) {
+      throw new IllegalArgumentException("Invalid hour");
+    }
+
     int n_lights = 4;
     int n_lights_on = hour % 5;
 
