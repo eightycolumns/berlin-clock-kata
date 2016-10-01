@@ -19,6 +19,13 @@ public class BerlinClockTest {
   }
 
   @Test
+  public void secondsLampExpectsSecondLessThan60() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Invalid second");
+    BerlinClock.secondsLamp(60);
+  }
+
+  @Test
   public void secondsLampIs1AtSecond0() {
     assertEquals("1", BerlinClock.secondsLamp(0));
   }

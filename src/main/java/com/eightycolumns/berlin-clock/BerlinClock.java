@@ -6,7 +6,7 @@ class BerlinClock {
   }
 
   public static String secondsLamp(int second) {
-    if (second < 0) {
+    if (second < 0 || second > 59) {
       throw new IllegalArgumentException("Invalid second");
     }
 
