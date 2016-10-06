@@ -5,7 +5,17 @@ class BerlinClock {
     // Suppress default constructor
   }
 
-  public static String secondsLamp(int second) {
+  public static String compositeRow(int hour, int minute, int second) {
+    return (
+      secondsLamp(second) +
+      fiveHourRow(hour) +
+      oneHourRow(hour) +
+      fiveMinuteRow(minute) +
+      oneMinuteRow(minute)
+    );
+  }
+
+  static String secondsLamp(int second) {
     if (second < 0 || second > 59) {
       throw new IllegalArgumentException("Invalid second");
     }
@@ -13,7 +23,7 @@ class BerlinClock {
     return isEven(second) ? "1" : "0";
   }
 
-  public static String fiveHourRow(int hour) {
+  static String fiveHourRow(int hour) {
     if (hour < 0 || hour > 23) {
       throw new IllegalArgumentException("Invalid hour");
     }
@@ -24,7 +34,7 @@ class BerlinClock {
     return row(n_lights, n_lights_on);
   }
 
-  public static String oneHourRow(int hour) {
+  static String oneHourRow(int hour) {
     if (hour < 0 || hour > 23) {
       throw new IllegalArgumentException("Invalid hour");
     }
@@ -35,7 +45,7 @@ class BerlinClock {
     return row(n_lights, n_lights_on);
   }
 
-  public static String fiveMinuteRow(int minute) {
+  static String fiveMinuteRow(int minute) {
     if (minute < 0 || minute > 59) {
       throw new IllegalArgumentException("Invalid minute");
     }
@@ -46,7 +56,7 @@ class BerlinClock {
     return row(n_lights, n_lights_on);
   }
 
-  public static String oneMinuteRow(int minute) {
+  static String oneMinuteRow(int minute) {
     if (minute < 0 || minute > 59) {
       throw new IllegalArgumentException("Invalid minute");
     }
@@ -55,16 +65,6 @@ class BerlinClock {
     int n_lights_on = minute % 5;
 
     return row(n_lights, n_lights_on);
-  }
-
-  public static String compositeRow(int hour, int minute, int second) {
-    return (
-      secondsLamp(second) +
-      fiveHourRow(hour) +
-      oneHourRow(hour) +
-      fiveMinuteRow(minute) +
-      oneMinuteRow(minute)
-    );
   }
 
   private static boolean isEven(int d) {
