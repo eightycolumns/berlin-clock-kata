@@ -2,19 +2,11 @@ package com.eightycolumns.berlin_clock;
 
 import static org.junit.Assert.*;
 
-import org.junit.Rule;
 import org.junit.Test;
 
-import org.junit.rules.ExpectedException;
-
 public class FiveHourRowTest {
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
-
-  @Test
+  @Test(expected = IllegalArgumentException.class)
   public void fiveHourRowExpectsNonnegativeHour() {
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Invalid hour");
     BerlinClock.fiveHourRow(-1);
   }
 
@@ -48,10 +40,8 @@ public class FiveHourRowTest {
     assertEquals("1111", BerlinClock.fiveHourRow(23));
   }
 
-  @Test
+  @Test(expected = IllegalArgumentException.class)
   public void fiveHourRowExpectsHourLessThan24() {
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Invalid hour");
     BerlinClock.fiveHourRow(24);
   }
 }

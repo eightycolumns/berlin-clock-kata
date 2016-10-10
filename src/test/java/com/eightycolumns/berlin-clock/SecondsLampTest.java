@@ -2,19 +2,11 @@ package com.eightycolumns.berlin_clock;
 
 import static org.junit.Assert.*;
 
-import org.junit.Rule;
 import org.junit.Test;
 
-import org.junit.rules.ExpectedException;
-
 public class SecondsLampTest {
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
-
-  @Test
+  @Test(expected = IllegalArgumentException.class)
   public void secondsLampExpectsNonnegativeSecond() {
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Invalid second");
     BerlinClock.secondsLamp(-1);
   }
 
@@ -28,10 +20,8 @@ public class SecondsLampTest {
     assertEquals("0", BerlinClock.secondsLamp(59));
   }
 
-  @Test
+  @Test(expected = IllegalArgumentException.class)
   public void secondsLampExpectsSecondLessThan60() {
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Invalid second");
     BerlinClock.secondsLamp(60);
   }
 }
