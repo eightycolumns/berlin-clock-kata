@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class OneMinuteRowTest {
-  @Test(expected = IllegalArgumentException.class)
+  @Test(expected = InvalidMinuteException.class)
   public void oneMinuteRowExpectsNonnegativeMinute() {
     BerlinClock.oneMinuteRow(-1);
   }
@@ -40,7 +40,7 @@ public class OneMinuteRowTest {
     assertEquals("1111", BerlinClock.oneMinuteRow(59));
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test(expected = InvalidMinuteException.class)
   public void oneMinuteRowExpectsMinuteLessThan60() {
     BerlinClock.oneMinuteRow(60);
   }

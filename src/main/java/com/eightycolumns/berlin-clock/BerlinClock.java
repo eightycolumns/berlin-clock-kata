@@ -47,7 +47,7 @@ class BerlinClock {
 
   static String fiveMinuteRow(int minute) {
     if (minute < 0 || minute > 59) {
-      throw new IllegalArgumentException("Invalid minute");
+      throw new InvalidMinuteException();
     }
 
     int n_lights = 11;
@@ -58,7 +58,7 @@ class BerlinClock {
 
   static String oneMinuteRow(int minute) {
     if (minute < 0 || minute > 59) {
-      throw new IllegalArgumentException("Invalid minute");
+      throw new InvalidMinuteException();
     }
 
     int n_lights = 4;
