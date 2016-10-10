@@ -82,12 +82,12 @@ class BerlinClock {
   private static String repeat(char c, int n) {
     assert n >= 0;
 
-    String s = "";
+    StringBuilder sb = new StringBuilder();
 
     for (int i = 0; i < n; i += 1) {
-      s += c;
+      sb.append(c);
     }
 
-    return s;
+    return sb.toString();
   }
 }
