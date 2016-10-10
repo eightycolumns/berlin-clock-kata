@@ -25,7 +25,7 @@ class BerlinClock {
 
   static String fiveHourRow(int hour) {
     if (hour < 0 || hour > 23) {
-      throw new IllegalArgumentException("Invalid hour");
+      throw new InvalidHourException();
     }
 
     int n_lights = 4;
@@ -36,7 +36,7 @@ class BerlinClock {
 
   static String oneHourRow(int hour) {
     if (hour < 0 || hour > 23) {
-      throw new IllegalArgumentException("Invalid hour");
+      throw new InvalidHourException();
     }
 
     int n_lights = 4;

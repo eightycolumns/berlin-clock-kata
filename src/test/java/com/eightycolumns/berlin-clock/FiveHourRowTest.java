@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class FiveHourRowTest {
-  @Test(expected = IllegalArgumentException.class)
+  @Test(expected = InvalidHourException.class)
   public void fiveHourRowExpectsNonnegativeHour() {
     BerlinClock.fiveHourRow(-1);
   }
@@ -40,7 +40,7 @@ public class FiveHourRowTest {
     assertEquals("1111", BerlinClock.fiveHourRow(23));
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test(expected = InvalidHourException.class)
   public void fiveHourRowExpectsHourLessThan24() {
     BerlinClock.fiveHourRow(24);
   }
