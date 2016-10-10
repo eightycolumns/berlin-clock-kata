@@ -17,7 +17,7 @@ class BerlinClock {
 
   static String secondsLamp(int second) {
     if (second < 0 || second > 59) {
-      throw new IllegalArgumentException("Invalid second");
+      throw new InvalidSecondException();
     }
 
     return isEven(second) ? "1" : "0";

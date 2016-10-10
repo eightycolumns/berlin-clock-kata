@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class SecondsLampTest {
-  @Test(expected = IllegalArgumentException.class)
+  @Test(expected = InvalidSecondException.class)
   public void secondsLampExpectsNonnegativeSecond() {
     BerlinClock.secondsLamp(-1);
   }
@@ -20,7 +20,7 @@ public class SecondsLampTest {
     assertEquals("0", BerlinClock.secondsLamp(59));
   }
 
-  @Test(expected = IllegalArgumentException.class)
+  @Test(expected = InvalidSecondException.class)
   public void secondsLampExpectsSecondLessThan60() {
     BerlinClock.secondsLamp(60);
   }
