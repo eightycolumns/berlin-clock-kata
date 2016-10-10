@@ -7,11 +7,9 @@ import org.junit.Test;
 
 import org.junit.rules.ExpectedException;
 
-public class BerlinClockTest {
+public class CompositeRowTest {
   @Rule
   public ExpectedException thrown = ExpectedException.none();
-
-  // Composite row
 
   @Test
   public void compositeRowExpectsNonnegativeHour() {
