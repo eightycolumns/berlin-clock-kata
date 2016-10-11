@@ -12,14 +12,12 @@ public class SecondsLampTest {
 
   @Test
   public void secondsLampIs1AtSecond0() {
-    SecondsLamp secondsLamp = SecondsLamp.atSecond(0);
-    assertEquals("1", secondsLamp.toBinaryString());
+    assertEquals("1", SecondsLamp.atSecond(0).toBinaryString());
   }
 
   @Test
   public void secondsLampIs0AtSecond59() {
-    SecondsLamp secondsLamp = SecondsLamp.atSecond(59);
-    assertEquals("0", secondsLamp.toBinaryString());
+    assertEquals("0", SecondsLamp.atSecond(59).toBinaryString());
   }
 
   @Test(expected = InvalidSecondException.class)

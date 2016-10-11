@@ -12,38 +12,32 @@ public class FiveMinuteRowTest {
 
   @Test
   public void fiveMinuteRowIs00000000000AtMinute0() {
-    FiveMinuteRow fiveMinuteRow = FiveMinuteRow.atMinute(0);
-    assertEquals("00000000000", fiveMinuteRow.toBinaryString());
+    assertEquals("00000000000", FiveMinuteRow.atMinute(0).toBinaryString());
   }
 
   @Test
   public void fiveMinuteRowIs00000000000AtMinute4() {
-    FiveMinuteRow fiveMinuteRow = FiveMinuteRow.atMinute(4);
-    assertEquals("00000000000", fiveMinuteRow.toBinaryString());
+    assertEquals("00000000000", FiveMinuteRow.atMinute(4).toBinaryString());
   }
 
   @Test
   public void fiveMinuteRowIs10000000000AtMinute5() {
-    FiveMinuteRow fiveMinuteRow = FiveMinuteRow.atMinute(5);
-    assertEquals("10000000000", fiveMinuteRow.toBinaryString());
+    assertEquals("10000000000", FiveMinuteRow.atMinute(5).toBinaryString());
   }
 
   @Test
   public void fiveMinuteRowIs10000000000AtMinute9() {
-    FiveMinuteRow fiveMinuteRow = FiveMinuteRow.atMinute(9);
-    assertEquals("10000000000", fiveMinuteRow.toBinaryString());
+    assertEquals("10000000000", FiveMinuteRow.atMinute(9).toBinaryString());
   }
 
   @Test
   public void fiveMinuteRowIs11000000000AtMinute10() {
-    FiveMinuteRow fiveMinuteRow = FiveMinuteRow.atMinute(10);
-    assertEquals("11000000000", fiveMinuteRow.toBinaryString());
+    assertEquals("11000000000", FiveMinuteRow.atMinute(10).toBinaryString());
   }
 
   @Test
   public void fiveMinuteRowIs11111111111AtMinute59() {
-    FiveMinuteRow fiveMinuteRow = FiveMinuteRow.atMinute(59);
-    assertEquals("11111111111", fiveMinuteRow.toBinaryString());
+    assertEquals("11111111111", FiveMinuteRow.atMinute(59).toBinaryString());
   }
 
   @Test(expected = InvalidMinuteException.class)

@@ -12,38 +12,32 @@ public class FiveHourRowTest {
 
   @Test
   public void fiveHourRowIs0000AtHour0() {
-    FiveHourRow fiveHourRow = FiveHourRow.atHour(0);
-    assertEquals("0000", fiveHourRow.toBinaryString());
+    assertEquals("0000", FiveHourRow.atHour(0).toBinaryString());
   }
 
   @Test
   public void fiveHourRowIs0000AtHour4() {
-    FiveHourRow fiveHourRow = FiveHourRow.atHour(4);
-    assertEquals("0000", fiveHourRow.toBinaryString());
+    assertEquals("0000", FiveHourRow.atHour(4).toBinaryString());
   }
 
   @Test
   public void fiveHourRowIs1000AtHour5() {
-    FiveHourRow fiveHourRow = FiveHourRow.atHour(5);
-    assertEquals("1000", fiveHourRow.toBinaryString());
+    assertEquals("1000", FiveHourRow.atHour(5).toBinaryString());
   }
 
   @Test
   public void fiveHourRowIs1000AtHour9() {
-    FiveHourRow fiveHourRow = FiveHourRow.atHour(9);
-    assertEquals("1000", fiveHourRow.toBinaryString());
+    assertEquals("1000", FiveHourRow.atHour(9).toBinaryString());
   }
 
   @Test
   public void fiveHourRowIs1100AtHour10() {
-    FiveHourRow fiveHourRow = FiveHourRow.atHour(10);
-    assertEquals("1100", fiveHourRow.toBinaryString());
+    assertEquals("1100", FiveHourRow.atHour(10).toBinaryString());
   }
 
   @Test
   public void fiveHourRowIs1111AtHour23() {
-    FiveHourRow fiveHourRow = FiveHourRow.atHour(23);
-    assertEquals("1111", fiveHourRow.toBinaryString());
+    assertEquals("1111", FiveHourRow.atHour(23).toBinaryString());
   }
 
   @Test(expected = InvalidHourException.class)
