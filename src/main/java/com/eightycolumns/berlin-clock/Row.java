@@ -1,7 +1,7 @@
 package com.eightycolumns.berlin_clock;
 
 abstract class Row {
-  abstract String binaryString();
+  abstract String toBinaryString();
 
   protected String row(int n_lights, int n_lights_on) {
     assert n_lights >= n_lights_on;

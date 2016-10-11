@@ -11,7 +11,7 @@ class SecondsLamp {
     this.second = second;
   }
 
-  String binaryString() {
+  String toBinaryString() {
     return isEven(second) ? "1" : "0";
   }
 

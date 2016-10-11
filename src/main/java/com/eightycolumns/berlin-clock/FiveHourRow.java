@@ -11,7 +11,7 @@ class FiveHourRow extends Row {
     this.hour = hour;
   }
 
-  String binaryString() {
+  String toBinaryString() {
     int n_lights = 4;
     int n_lights_on = hour / 5;
 

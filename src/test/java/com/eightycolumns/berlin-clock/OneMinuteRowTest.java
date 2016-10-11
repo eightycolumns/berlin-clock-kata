@@ -13,37 +13,37 @@ public class OneMinuteRowTest {
   @Test
   public void oneMinuteRowIs0000AtMinute0() {
     OneMinuteRow oneMinuteRow = new OneMinuteRow(0);
-    assertEquals("0000", oneMinuteRow.binaryString());
+    assertEquals("0000", oneMinuteRow.toBinaryString());
   }
 
   @Test
   public void oneMinuteRowIs1000AtMinute1() {
     OneMinuteRow oneMinuteRow = new OneMinuteRow(1);
-    assertEquals("1000", oneMinuteRow.binaryString());
+    assertEquals("1000", oneMinuteRow.toBinaryString());
   }
 
   @Test
   public void oneMinuteRowIs1111AtMinute4() {
     OneMinuteRow oneMinuteRow = new OneMinuteRow(4);
-    assertEquals("1111", oneMinuteRow.binaryString());
+    assertEquals("1111", oneMinuteRow.toBinaryString());
   }
 
   @Test
   public void oneMinuteRowIs0000AtMinute5() {
     OneMinuteRow oneMinuteRow = new OneMinuteRow(5);
-    assertEquals("0000", oneMinuteRow.binaryString());
+    assertEquals("0000", oneMinuteRow.toBinaryString());
   }
 
   @Test
   public void oneMinuteRowIs1000AtMinute6() {
     OneMinuteRow oneMinuteRow = new OneMinuteRow(6);
-    assertEquals("1000", oneMinuteRow.binaryString());
+    assertEquals("1000", oneMinuteRow.toBinaryString());
   }
 
   @Test
   public void oneMinuteRowIs1111AtMinute59() {
     OneMinuteRow oneMinuteRow = new OneMinuteRow(59);
-    assertEquals("1111", oneMinuteRow.binaryString());
+    assertEquals("1111", oneMinuteRow.toBinaryString());
   }
 
   @Test(expected = InvalidMinuteException.class)

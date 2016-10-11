@@ -2,18 +2,18 @@ package com.eightycolumns.berlin_clock;
 
 class BerlinClock {
   public String compositeRow(int hour, int minute, int second) {
-    String secondsLamp = new SecondsLamp(second).binaryString();
-    String fiveHourRow = new FiveHourRow(hour).binaryString();
-    String oneHourRow = new OneHourRow(hour).binaryString();
-    String fiveMinuteRow = new FiveMinuteRow(minute).binaryString();
-    String oneMinuteRow = new OneMinuteRow(minute).binaryString();
+    SecondsLamp secondsLamp = new SecondsLamp(second);
+    FiveHourRow fiveHourRow = new FiveHourRow(hour);
+    OneHourRow oneHourRow = new OneHourRow(hour);
+    FiveMinuteRow fiveMinuteRow = new FiveMinuteRow(minute);
+    OneMinuteRow oneMinuteRow = new OneMinuteRow(minute);
 
     return (
-      secondsLamp +
-      fiveHourRow +
-      oneHourRow +
-      fiveMinuteRow +
-      oneMinuteRow
+      secondsLamp.toBinaryString() +
+      fiveHourRow.toBinaryString() +
+      oneHourRow.toBinaryString() +
+      fiveMinuteRow.toBinaryString() +
+      oneMinuteRow.toBinaryString()
     );
   }
 }

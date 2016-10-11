@@ -11,7 +11,7 @@ class OneMinuteRow extends Row {
     this.minute = minute;
   }
 
-  String binaryString() {
+  String toBinaryString() {
     int n_lights = 4;
     int n_lights_on = minute % 5;
 
