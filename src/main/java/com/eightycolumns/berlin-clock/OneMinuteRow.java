@@ -1,22 +1,19 @@
 package com.eightycolumns.berlin_clock;
 
-class BerlinClock {
-  private BerlinClock() {
+class OneMinuteRow {
+  private OneMinuteRow() {
     // Suppress default constructor
   }
 
-  public static String compositeRow(int hour, int minute, int second) {
-    return (
-      SecondsLamp.atSecond(second) +
-      FiveHourRow.atHour(hour) +
-      OneHourRow.atHour(hour) +
-      FiveMinuteRow.atMinute(minute) +
-      OneMinuteRow.atMinute(minute)
-    );
-  }
+  static String atMinute(int minute) {
+    if (minute < 0 || minute > 59) {
+      throw new InvalidMinuteException();
+    }
 
-  private static boolean isEven(int d) {
-    return d % 2 == 0;
+    int n_lights = 4;
+    int n_lights_on = minute % 5;
+
+    return row(n_lights, n_lights_on);
   }
 
   private static String row(int n_lights, int n_lights_on) {
