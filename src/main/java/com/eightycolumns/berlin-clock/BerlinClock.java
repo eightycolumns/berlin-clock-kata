@@ -9,21 +9,10 @@ class BerlinClock {
     return (
       SecondsLamp.atSecond(second) +
       FiveHourRow.atHour(hour) +
-      oneHourRow(hour) +
+      OneHourRow.atHour(hour) +
       fiveMinuteRow(minute) +
       oneMinuteRow(minute)
     );
-  }
-
-  static String oneHourRow(int hour) {
-    if (hour < 0 || hour > 23) {
-      throw new InvalidHourException();
-    }
-
-    int n_lights = 4;
-    int n_lights_on = hour % 5;
-
-    return row(n_lights, n_lights_on);
   }
 
   static String fiveMinuteRow(int minute) {
