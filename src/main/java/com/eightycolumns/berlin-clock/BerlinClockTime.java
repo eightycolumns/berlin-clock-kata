@@ -1,13 +1,13 @@
 package com.eightycolumns.berlin_clock;
 
-class BerlinClockTime {
-  private SecondsLamp secondsLamp;
-  private FiveHourRow fiveHourRow;
-  private OneHourRow oneHourRow;
-  private FiveMinuteRow fiveMinuteRow;
-  private OneMinuteRow oneMinuteRow;
+public final class BerlinClockTime {
+  private final SecondsLamp secondsLamp;
+  private final FiveHourRow fiveHourRow;
+  private final OneHourRow oneHourRow;
+  private final FiveMinuteRow fiveMinuteRow;
+  private final OneMinuteRow oneMinuteRow;
 
-  BerlinClockTime(int hour, int minute, int second) {
+  public BerlinClockTime(int hour, int minute, int second) {
     secondsLamp = new SecondsLamp(second);
     fiveHourRow = new FiveHourRow(hour);
     oneHourRow = new OneHourRow(hour);

@@ -1,7 +1,7 @@
 package com.eightycolumns.berlin_clock;
 
-class FiveMinuteRow extends Row {
-  private int minute;
+final class FiveMinuteRow extends Row {
+  private final int minute;
 
   FiveMinuteRow(int minute) {
     if (minute < 0 || minute > 59) {

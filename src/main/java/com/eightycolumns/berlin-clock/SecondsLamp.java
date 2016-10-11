@@ -1,7 +1,7 @@
 package com.eightycolumns.berlin_clock;
 
-class SecondsLamp {
-  private int second;
+final class SecondsLamp {
+  private final int second;
 
   SecondsLamp(int second) {
     if (second < 0 || second > 59) {
