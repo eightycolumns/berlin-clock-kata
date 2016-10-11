@@ -5,12 +5,13 @@ class BerlinClock {
     String secondsLamp = new SecondsLamp(second).binaryString();
     String fiveHourRow = new FiveHourRow(hour).binaryString();
     String oneHourRow = new OneHourRow(hour).binaryString();
+    String fiveMinuteRow = new FiveMinuteRow(minute).binaryString();
 
     return (
       secondsLamp +
       fiveHourRow +
       oneHourRow +
-      FiveMinuteRow.atMinute(minute) +
+      fiveMinuteRow +
       OneMinuteRow.atMinute(minute)
     );
   }
