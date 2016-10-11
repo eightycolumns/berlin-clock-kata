@@ -11,7 +11,7 @@ public final class BerlinClockTime {
     secondsLamp = new SecondsLamp(second);
     fiveHourRow = FiveHourRow.atHour(hour);
     oneHourRow = OneHourRow.atHour(hour);
-    fiveMinuteRow = new FiveMinuteRow(minute);
+    fiveMinuteRow = FiveMinuteRow.atMinute(minute);
     oneMinuteRow = new OneMinuteRow(minute);
   }
 
