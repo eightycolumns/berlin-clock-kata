@@ -1,22 +1,24 @@
 package com.eightycolumns.berlin_clock;
 
 class OneHourRow {
-  private OneHourRow() {
-    // Suppress default constructor
-  }
+  private int hour;
 
-  static String atHour(int hour) {
+  OneHourRow(int hour) {
     if (hour < 0 || hour > 23) {
       throw new InvalidHourException();
     }
 
+    this.hour = hour;
+  }
+
+  String binaryString() {
     int n_lights = 4;
     int n_lights_on = hour % 5;
 
     return row(n_lights, n_lights_on);
   }
 
-  private static String row(int n_lights, int n_lights_on) {
+  private String row(int n_lights, int n_lights_on) {
     assert n_lights >= n_lights_on;
 
     int n_lights_off = n_lights - n_lights_on;
@@ -24,7 +26,7 @@ class OneHourRow {
     return repeat('1', n_lights_on) + repeat('0', n_lights_off);
   }
 
-  private static String repeat(char c, int n) {
+  private String repeat(char c, int n) {
     assert n >= 0;
 
     StringBuilder sb = new StringBuilder();
