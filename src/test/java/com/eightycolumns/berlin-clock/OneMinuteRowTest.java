@@ -7,41 +7,47 @@ import org.junit.Test;
 public class OneMinuteRowTest {
   @Test(expected = InvalidMinuteException.class)
   public void oneMinuteRowExpectsNonnegativeMinute() {
-    OneMinuteRow.atMinute(-1);
+    OneMinuteRow oneMinuteRow = new OneMinuteRow(-1);
   }
 
   @Test
   public void oneMinuteRowIs0000AtMinute0() {
-    assertEquals("0000", OneMinuteRow.atMinute(0));
+    OneMinuteRow oneMinuteRow = new OneMinuteRow(0);
+    assertEquals("0000", oneMinuteRow.binaryString());
   }
 
   @Test
   public void oneMinuteRowIs1000AtMinute1() {
-    assertEquals("1000", OneMinuteRow.atMinute(1));
+    OneMinuteRow oneMinuteRow = new OneMinuteRow(1);
+    assertEquals("1000", oneMinuteRow.binaryString());
   }
 
   @Test
   public void oneMinuteRowIs1111AtMinute4() {
-    assertEquals("1111", OneMinuteRow.atMinute(4));
+    OneMinuteRow oneMinuteRow = new OneMinuteRow(4);
+    assertEquals("1111", oneMinuteRow.binaryString());
   }
 
   @Test
   public void oneMinuteRowIs0000AtMinute5() {
-    assertEquals("0000", OneMinuteRow.atMinute(5));
+    OneMinuteRow oneMinuteRow = new OneMinuteRow(5);
+    assertEquals("0000", oneMinuteRow.binaryString());
   }
 
   @Test
   public void oneMinuteRowIs1000AtMinute6() {
-    assertEquals("1000", OneMinuteRow.atMinute(6));
+    OneMinuteRow oneMinuteRow = new OneMinuteRow(6);
+    assertEquals("1000", oneMinuteRow.binaryString());
   }
 
   @Test
   public void oneMinuteRowIs1111AtMinute59() {
-    assertEquals("1111", OneMinuteRow.atMinute(59));
+    OneMinuteRow oneMinuteRow = new OneMinuteRow(59);
+    assertEquals("1111", oneMinuteRow.binaryString());
   }
 
   @Test(expected = InvalidMinuteException.class)
   public void oneMinuteRowExpectsMinuteLessThan60() {
-    OneMinuteRow.atMinute(60);
+    OneMinuteRow oneMinuteRow = new OneMinuteRow(60);
   }
 }
