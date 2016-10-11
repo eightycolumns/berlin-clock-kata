@@ -7,41 +7,47 @@ import org.junit.Test;
 public class FiveHourRowTest {
   @Test(expected = InvalidHourException.class)
   public void fiveHourRowExpectsNonnegativeHour() {
-    FiveHourRow.atHour(-1);
+    FiveHourRow fiveHourRow = new FiveHourRow(-1);
   }
 
   @Test
   public void fiveHourRowIs0000AtHour0() {
-    assertEquals("0000", FiveHourRow.atHour(0));
+    FiveHourRow fiveHourRow = new FiveHourRow(0);
+    assertEquals("0000", fiveHourRow.binaryString());
   }
 
   @Test
   public void fiveHourRowIs0000AtHour4() {
-    assertEquals("0000", FiveHourRow.atHour(4));
+    FiveHourRow fiveHourRow = new FiveHourRow(4);
+    assertEquals("0000", fiveHourRow.binaryString());
   }
 
   @Test
   public void fiveHourRowIs1000AtHour5() {
-    assertEquals("1000", FiveHourRow.atHour(5));
+    FiveHourRow fiveHourRow = new FiveHourRow(5);
+    assertEquals("1000", fiveHourRow.binaryString());
   }
 
   @Test
   public void fiveHourRowIs1000AtHour9() {
-    assertEquals("1000", FiveHourRow.atHour(9));
+    FiveHourRow fiveHourRow = new FiveHourRow(9);
+    assertEquals("1000", fiveHourRow.binaryString());
   }
 
   @Test
   public void fiveHourRowIs1100AtHour10() {
-    assertEquals("1100", FiveHourRow.atHour(10));
+    FiveHourRow fiveHourRow = new FiveHourRow(10);
+    assertEquals("1100", fiveHourRow.binaryString());
   }
 
   @Test
   public void fiveHourRowIs1111AtHour23() {
-    assertEquals("1111", FiveHourRow.atHour(23));
+    FiveHourRow fiveHourRow = new FiveHourRow(23);
+    assertEquals("1111", fiveHourRow.binaryString());
   }
 
   @Test(expected = InvalidHourException.class)
   public void fiveHourRowExpectsHourLessThan24() {
-    FiveHourRow.atHour(24);
+    FiveHourRow fiveHourRow = new FiveHourRow(24);
   }
 }
