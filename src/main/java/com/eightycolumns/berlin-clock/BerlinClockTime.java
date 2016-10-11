@@ -12,7 +12,7 @@ public final class BerlinClockTime {
     fiveHourRow = FiveHourRow.atHour(hour);
     oneHourRow = OneHourRow.atHour(hour);
     fiveMinuteRow = FiveMinuteRow.atMinute(minute);
-    oneMinuteRow = new OneMinuteRow(minute);
+    oneMinuteRow = OneMinuteRow.atMinute(minute);
   }
 
   public String toBinaryString() {
