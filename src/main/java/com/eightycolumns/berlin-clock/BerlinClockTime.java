@@ -8,7 +8,7 @@ public final class BerlinClockTime {
   private final OneMinuteRow oneMinuteRow;
 
   public BerlinClockTime(int hour, int minute, int second) {
-    secondsLamp = new SecondsLamp(second);
+    secondsLamp = SecondsLamp.atSecond(second);
     fiveHourRow = FiveHourRow.atHour(hour);
     oneHourRow = OneHourRow.atHour(hour);
     fiveMinuteRow = FiveMinuteRow.atMinute(minute);
