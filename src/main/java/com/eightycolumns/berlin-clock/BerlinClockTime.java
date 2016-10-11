@@ -10,7 +10,7 @@ public final class BerlinClockTime {
   public BerlinClockTime(int hour, int minute, int second) {
     secondsLamp = new SecondsLamp(second);
     fiveHourRow = FiveHourRow.atHour(hour);
-    oneHourRow = new OneHourRow(hour);
+    oneHourRow = OneHourRow.atHour(hour);
     fiveMinuteRow = new FiveMinuteRow(minute);
     oneMinuteRow = new OneMinuteRow(minute);
   }
