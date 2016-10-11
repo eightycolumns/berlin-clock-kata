@@ -7,20 +7,12 @@ class BerlinClock {
 
   public static String compositeRow(int hour, int minute, int second) {
     return (
-      secondsLamp(second) +
+      SecondsLamp.atSecond(second) +
       fiveHourRow(hour) +
       oneHourRow(hour) +
       fiveMinuteRow(minute) +
       oneMinuteRow(minute)
     );
-  }
-
-  static String secondsLamp(int second) {
-    if (second < 0 || second > 59) {
-      throw new InvalidSecondException();
-    }
-
-    return isEven(second) ? "1" : "0";
   }
 
   static String fiveHourRow(int hour) {
