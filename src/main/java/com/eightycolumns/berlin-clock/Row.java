@@ -3,12 +3,12 @@ package com.eightycolumns.berlin_clock;
 abstract class Row {
   abstract String toBinaryString();
 
-  protected String row(int n_lights, int n_lights_on) {
-    assert n_lights >= n_lights_on;
+  protected String row(int nLights, int nLightsOn) {
+    assert nLights >= nLightsOn;
 
-    int n_lights_off = n_lights - n_lights_on;
+    int nLightsOff = nLights - nLightsOn;
 
-    return repeat('1', n_lights_on) + repeat('0', n_lights_off);
+    return repeat('1', nLightsOn) + repeat('0', nLightsOff);
   }
 
   protected String repeat(char c, int n) {
