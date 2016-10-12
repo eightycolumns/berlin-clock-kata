@@ -1,6 +1,6 @@
 package com.eightycolumns.berlin_clock;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
