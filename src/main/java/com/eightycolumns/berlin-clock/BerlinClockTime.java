@@ -16,12 +16,14 @@ public final class BerlinClockTime {
   }
 
   public String toBinaryString() {
-    return (
-      secondsLamp.toBinaryString() +
-      fiveHourRow.toBinaryString() +
-      oneHourRow.toBinaryString() +
-      fiveMinuteRow.toBinaryString() +
-      oneMinuteRow.toBinaryString()
-    );
+    StringBuilder sb = new StringBuilder();
+
+    sb.append(secondsLamp.toBinaryString());
+    sb.append(fiveHourRow.toBinaryString());
+    sb.append(oneHourRow.toBinaryString());
+    sb.append(fiveMinuteRow.toBinaryString());
+    sb.append(oneMinuteRow.toBinaryString());
+
+    return sb.toString();
   }
 }
