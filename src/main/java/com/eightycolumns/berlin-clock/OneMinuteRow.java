@@ -18,7 +18,8 @@ final class OneMinuteRow extends Row {
   String toBinaryString() {
     int nLights = 4;
     int nLightsOn = minute % 5;
+    int nLightsOff = nLights - nLightsOn;
 
-    return row(nLights, nLightsOn);
+    return repeat('1', nLightsOn) + repeat('0', nLightsOff);
   }
 }

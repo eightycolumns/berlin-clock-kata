@@ -3,14 +3,6 @@ package com.eightycolumns.berlin_clock;
 abstract class Row {
   abstract String toBinaryString();
 
-  protected String row(int nLights, int nLightsOn) {
-    assert nLights >= nLightsOn;
-
-    int nLightsOff = nLights - nLightsOn;
-
-    return repeat('1', nLightsOn) + repeat('0', nLightsOff);
-  }
-
   protected String repeat(char c, int n) {
     assert n >= 0;
 
